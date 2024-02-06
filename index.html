@@ -3,87 +3,707 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <title>Panama Rejuvenation Retreat</title>
 
     <!-- update the version number as needed -->
-    <script defer src="/__/firebase/10.8.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/10.8.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-performance-compat.js"></script>
+
     <!-- 
       initialize the SDK after all desired features are loaded, set useEmulator to false
       to avoid connecting the SDK to running emulators.
     -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
+    <style>
+      button,hr,input{overflow:visible}progress,sub,sup{vertical-align:baseline}[type=checkbox],[type=radio],legend{box-sizing:border-box;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}details,main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:ButtonText dotted 1px}fieldset{padding:.35em .75em .625em}legend{color:inherit;display:table;max-width:100%;white-space:normal}textarea{overflow:auto}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}[hidden],template{display:none}
+    </style>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap')
+    </style>
     <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
+      * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
+      body {
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1.5;
+      }
+      section {
+        width: 100%;
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+      }
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+      strong {
+        font-weight: 500;
+      }
+      .container {
+        max-width: 1200px;
+        margin: auto;
+        z-index: 1;
+        position: relative;
+      }
+      .flex-container {
+        display: flex;
+        align-items: center;
+      }
+      header {
+        height: 100vh;
+        color: #FFFFFF;
+        background-image: url("./bg-hero.jpg");
+        background-size: cover;
+        background-position: center center;
+        background-color: #000000;
+        position: relative;
+      }
+      .intro {
+        background-color:  #000000;
+        color: #D77E24;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 10px 0;
+        letter-spacing: 1px;
+        font-weight: 500;
+        font-size: 1.4rem;
+      }
+      h1 span {
+        font-size: 40px;
+        text-transform: uppercase;
+        display: block;
+        font-weight: 300;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+      }
+      h1 span strong {
+        font-weight: 300;
+        display: inline-block;
+        border-bottom: 3px solid #D77E24;
+      }
+      h2, h3 {
+        font-weight: 500;
+      }
+      h1 {
+        margin: 10vh auto;
+        font-size: 5.5rem;
+        text-align: center;
+        line-height: 1.2;
+        letter-spacing: 2px;
+      }
+      .q {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: absolute;
+        bottom: 5vh;
+        left: 0;
+        right: 0;
+      }
+      .bull p {
+        display: flex;
+        padding-left: 40px;
+        background-image: url("./bull-circle.png");
+        background-repeat: no-repeat;
+        background-position: left 10px;
+      }
+      .bull-blk p {
+        background-image: url("./bull-circle-black.png");
+      }
+      .bull p:nth-child(even) {
+        font-weight: 500;
+      }
+      .s01{
+        border-top: 1px solid #ffffff;
+        background: linear-gradient(180deg, #eeeeee, #ffffff, #ffffff);
+      }
+      .s01 img, .s03 img, .s05 img, .s07 img {
+        max-width: 600px;
+        margin: 20px 40px;
+      }
+      .h3 {
+        font-size: 34px;
+        text-align: center;
+      }
+      .s02, .s04 {
+        background-color: #4081A0;
+        color: #ffffff;
+      }
+      .s02 p span {
+        display: inline-block;
+        background-color: #D77E24;
+        padding-left: 5px;
+        padding-right: 5px;
+        font-weight: 500;
+      }
+      h2 {
+        text-align: center;
+        font-size: 3.5rem;
+        line-height: 1.2;
+        letter-spacing: 1px;
+      }
+      h2 span {
+        font-size: 30px;
+        display: block;
+        text-transform: uppercase;
+        font-weight: 300;
+        margin-bottom: 10px;
+      }
+      .text-orange {
+        color: #D77E24 ;
+        font-weight: 500;
+      }
+      .s03 img:nth-child(n+2), .img-3 {
+        width: 400px;
+      }
+      .icon-bull{
+        display: flex;
+        gap: 40px;
+        margin: 30px auto;
+      }
+      .icon-bull span {
+        background-color: #1B6588;
+        border-radius: 10px;
+        position: relative;
+        align-self: center;
+        padding: 30px;
+      }
+      .icon-bull span img {
+        width: unset;
+        margin: 0 auto;
+        align-self: center;
+      }
+      .s05 .img-full {
+        width: 100%;
+        max-width: 100vw;
+        display: block;
+        margin: 40px 0 0;
+        height: 50vh;
+      }
+      .s05 {
+        padding-bottom: 0;
+      }
+      .s06 {
+        background-color: #C0532D;
+        background-image: url("./bg-itinerary-pattern.png");
+        background-repeat: repeat-y;
+        background-position: center center;
+        color: #FFFFFF;
+      }
+      .quote {
+        font-size: 1.2em;
+        color: #D77E24;
+        font-weight: 500;
+        font-style: italic;
+      }
+      .day h3 {
+        border-left: 10px solid #D77E24;
+        padding-left: 20px;
+        margin-left: -30px;
+        margin-top: 40px;
+      }
+      .day strong {
+        text-decoration: underline;
+      }
+      .day ul li {
+        margin: 20px auto;
+      }
+      .s07 .flex-container {
+        gap: 30px;
+        justify-content: center;
+        margin-bottom: 50px;
+      }
+      .schedule span {
+        color: #D77E24;
+        font-weight: 500;
+        padding: 20px 0;
+        width: 300px;
+        border: 3px solid #D77E24;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 1.2em;
+      }
+      .s08 {
+        background-color: #eeeeee;
+      }
+      .s08 img {
+        max-width: 400px;
+        margin-right: 40px;
+      }
+      .s08 p {
+        margin: 0;
+      }
+
+      @media screen and (max-width: 1200px) {
+        body {
+          font-size: 20px;
+        }
+        .container {
+          max-width: 900px;
+        }
+        h1 {
+          font-size: 4rem;
+        }
+        h1 span {
+          font-size: 30px;
+        }
+        .intro {
+          font-size: 1.2rem;
+        }
+        .q {
+          max-width: 900px;
+        }
+        .s01 img, .s03 img, .s05 img {
+          max-width: 400px;
+          height: 500px;
+        }
+        .s07 img {
+          max-width: 400px;
+          height: 400px;
+        }
+        .h3 {
+          font-size: 28px;
+        }
+        h2 {
+          font-size: 3rem;
+        }
+        .s03 img:nth-child(n+2), .img-3 {
+          height: 300px !important;
+        }
+        .quote {
+          font-size: 1.1em;
+        }
+        .s08 img {
+          max-width: 300px;
+        }
+      }
+
+      @media screen and (max-width: 980px) {
+        body {
+          font-size: 16px;
+        }
+        .container {
+          max-width: 600px;
+        }
+        img {
+          margin: 40px auto;
+          display: block;
+        }
+        h1 {
+          font-size: 2.8rem;
+        }
+        h1 span {
+          font-size: 24px;
+        }
+        .intro {
+          font-size: 1rem;
+        }
+        .q {
+          max-width: 600px;
+        }
+        .flex-container {
+          flex-wrap: nowrap;
+        }
+        .s01 .flex-container, .s05 .flex-container {
+          flex-direction: column-reverse;
+        }
+        .s03 h2 br{
+          display: none;
+        }
+        .s03 .flex-container, .s07 .flex-container {
+          flex-direction: column;
+        }
+        .s03 .flex-container.s03-b {
+          flex-direction: column-reverse;
+        }
+        .s01 img, .s03 img, .s05 img, .s07 img {
+          max-width: 600px;
+          width: 100%;
+          height: 400px;
+        }
+        .s03 img:nth-child(n+2), .img-3 {
+          width: 100% !important;
+        }
+        .s05 img {
+          height: 600px;
+        }
+        .s05 .img-full {
+          height: 30vh;
+        }
+        .s08 img {
+          max-width: 200px;
+          margin: 0 40px 0 0;
+        }
+        .h3 {
+          font-size: 20px;
+        }
+        h2 {
+          font-size: 2.2rem;
+        }
+        h2 span {
+          font-size: 20px;
+        }
+        .quote {
+          font-size: 1.1em;
+        }
+        .bull p {
+          padding-left: 25px;
+          background-size: 8px;
+          background-position: left 7px;
+        }
+
+      }
+
+      @media screen and (max-width: 600px) {
+        p {
+          padding-right: 20px;
+          padding-left: 20px;
+        }
+        section {
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+        img {
+          margin: 0px auto !important;
+          display: block;
+        }
+        header {
+          background: linear-gradient(180deg, rgb(0,0,0,0), rgb(0,0,0,1)), url("./bg-hero.jpg") 70% center;
+          background-size: cover;
+          height: 90vh;
+        }
+        h1 {
+          font-size: 2.4em;
+          line-height: 1.2;
+          margin: 30px auto;
+          font-weight: 500;
+        }
+        h1 span {
+          font-size: 24px;
+        }
+        .intro {
+          font-size: 14px;
+          padding-right: 20px;
+          padding-left: 20px;
+        }
+        .q {
+          padding: 20px 0;
+          bottom: 0px;
+        }
+        .s01 img, .s03 img, .s05 img, .s07 img, .s08 img {
+          max-width: 600px;
+          width: 100%;
+          height: 300px;
+        }
+        .s08 .flex-content img {
+          height: unset;
+          max-width: 90%;
+          margin-top: 20px !important;
+        }
+        .s08 p {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        h2 {
+          font-size: 22px;
+          margin-left: 20px;
+          margin-right: 20px;
+        }
+        h2 span {
+          font-size: 16px;
+          margin-bottom: 5px;
+          letter-spacing: 0;
+        }
+        .s03, .s04, .s08 {
+          padding-bottom: 0px;
+        }
+        .s08 {
+          padding-top: 0px;
+        }
+        .s05 img {
+          height: 500px;
+        }
+        .quote {
+          font-size: 16px;
+        }
+        .icon-bull {
+          flex-direction: column;
+          gap: 0;
+          margin: 20px auto;
+        }
+        .icon-bull span {
+          width: 90%;
+          display: block;
+          margin-left: 20px;
+          margin-right: 20px;
+          padding: 15px 0;
+        }
+        .icon-bull span img {
+          height: 70px;
+        }
+        .day h3 {
+          margin-left: 0;
+          padding-left: 10px;
+          margin-top: 30px;
+          font-size: 18px;
+        }
+        .day ul {
+          margin-right: 20px;
+        }
+        .s07 .flex-container {
+          gap: 20px;
+          margin-bottom: 20px;
+        }
+        .schedule span {
+          font-size: 1.2em;
+          padding: 15px 0;
+        }
+        .bull {
+          margin-left: 20px;
+          margin-right: 20px;
+        }
+        .s08 .flex-container {
+          flex-direction: column;
+        }
+        .s06 {
+          padding-top: 140px;
+          padding-bottom: 30px;
+          background: url("./bg-itinerary-pattern-m.png") center -30vh repeat-x #C0532D;
+          background-size: 22vh;
+        }
+      }
+
+      @media screen and (max-height: 700px) {
+        header {
+          height: unset;
+        }
+        h1 {
+          font-size: 2em;
+        }
+        .q {
+          position: relative;
+          margin-right: 0px;
+          margin-left: 0px;
+          padding: 20px;
+          bottom: 0;
+        }
+      }
+
     </style>
   </head>
   <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+
+  <header>
+    <div class="intro">Exclusive Invitation for Medical Doctors and Health Professionals</div>
+    <div class="container">
+      <h1><span>It's time to <strong>take care of you</strong></span> Reboot, Rejuvenate, and Recharge in Paradise…</h1>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    <div class="q">
+      <div class="bull">
+        <p>Are you a medical professional who’s constantly working long hours… feeling exhausted, and doesn’t have the time to take care of yourself?</p>
+        <p>Would you like an opportunity to recharge your battery in paradise? Have 5-star spa treatments… invigorating cultural experiences… while connecting with your peers, improving your health, and having a wonderful time?</p>
+      </div>
+    </div>
+  </header>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+  <section class="s01">
+    <div class="container">
+      <p class="h3">If you answered <strong>“YES”</strong> to any of these questions, read on…</p>
+      <div class="flex-container">
+        <div class="flex-content">
+          <p>Let us introduce ourselves… We're Dr Cherisa Sandrow and Dr. Alex Sandrow.</p>
+          <p>Seven years ago, we faced a crisis that forced us to re-evaluate and reprioritize our lives.</p>
+          <p>We were tired of grinding 80-hour weeks in the hospitals and with clients, and we found a better way.</p>
+          <p>We're passionate about sharing our story and helping other physicians transform their lives, realize their potential, and learn to live life on their own terms.</p>
+          <p>And part of our new lifestyle is to dedicate time and space for OURSELVES to recharge.</p>
+        </div>
+        <img src="./img-01-alex-cherisa.png" alt="Alex & Cherisa" />
+      </div>
+      <p>We believe it’s critical for a medical professional’s health to spend time in beautiful, relaxing places where we can let their nervous systems reset and reboot their batteries.</p>
+    </div>
+  </section>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
+  <section class="s02">
+    <div class="container">
+      <h2><span>We are excited to announce</span> The Panama Rejuvenation Retreat</h2>
+      <p>Our first “Panama Rejuvenation Retreat”, exclusively for medical professionals, will be held in beautiful Panama City, Panama, <span>April 15-19th, 2024.</span></p>
+      <p>Panama Rejuvenate Retreat is a first-class wellness and revitalization experience exclusively designed for physicians and healthcare specialists who face demanding and hectic lifestyles.</p>
+      <img src="./img-02-marriott-pool.png" alt="JW Marriott Panama Pool Deck" />
+      <p>This comprehensive program gives you space to prioritize your physical, mental, and emotional health in a beautiful setting.</p>
+      <p>Panama Rejuvenate Retreat provides a 5-star experience where you and other physicians and healthcare specialists can disconnect from your demanding schedules and focus on your holistic health.</p>
+      <p>This retreat has been specially designed to offer a tranquil and restorative environment, allowing you to revitalize your energy, find balance, and learn practical tools you can use to live a healthier lifestyle amidst your professional responsibilities.</p>
+    </div>
+  </section>
+
+  <section class="s03">
+    <div class="container">
+      <h2><span>What are you going to experience during</span> The Rejuvenation Retreat?</h2>
+      <p>The experience starts in metropolitan Panama City, where you’ll spend 5 days in the best hotel in Panama while receiving the most state-of-the-art SPA treatments and learning cutting-edge nutritional knowledge.</p>
+      <p>Feeding our body the right nutrients is paramount for overall well-being and optimal health.</p>
+      <h2><span>Prepare To Be Blown Away By the</span> SuperFood Nutritional Masterclass <br>with Aris Latham</h2>
+      <div class="flex-container">
+        <img src="./img-03-superfood-class.png" alt="SuperFood Nutritional Masterclass" />
+        <div class="flex-content">
+          <p>Aris Latham, known as <span class="text-orange">"The Sunfired Gourmet”</span>, is disease-free, has 20/20 vision, zero excess body fat, and vibrant energy at the age of 76. He’s an influential figure throughout the world. His mastery and knowledge of superfoods have been shared in the nutrition industry worldwide for over 45 years.</p>
+          <p>He is truly a masterful artist and scientist with food. He combines superfoods in a creative, innovative way that makes you feel like you’re eating at a 5-star restaurant while giving your body health-boosting nutrients.</p>
+        </div>
+      </div>
+      <p>He has promoted conscious and healthy eating through television, radio, and conference presentations worldwide. His passion for nutritious food and commitment to promoting conscious eating have made him respected in the food and health industry.</p>
+      <p>Some of the celebrities he has had the opportunity to interact with or provide his culinary services include <strong>Rita Marley</strong> (Bob Marley's widow), <strong>Deepak Chopra</strong>, renowned physician <strong>Sidney Poitier</strong>, legendary actor and film director <strong>Dennis Weaver</strong>, actor Dick Gregory (Gunsmoke), comedian <strong>Tiffany Haddish</strong> and rockstar <strong>Lenny Kravitz</strong> and many more.</p>
+      <div class="flex-container s03-b">
+        <div class="flex-content">
+          <p>Experience a new nutritional paradigm that is more interesting, exciting, flavorful, and nutritious without any of the nutritional dogmatism attached to it.</p>
+          <p>We're talking about just plain, simple, nutrient-dense food that tastes great and makes you feel incredible.</p>
+          <p><strong>Here are Dr. Latham’s thoughts about nutrition and health…</strong></p>
+        </div>
+        <img src="./img-04-superfood-pic.png" alt="SuperFood Fruits" />
+      </div>
+      <div class="flex-container s03-b">
+        <img src="./img-05-superfood-pic.png" alt="SuperFood Juices" class="img-3" />
+        <div class="flex-content quote">
+          <p>“We are what we eat, and it starts with what’s on our plate.</p>
+          <p>My goal is to teach Doctors and health professionals to take care of themselves and to pass on this knowledge to their patients. I’m here to show medical professionals how ‘Food can be thy medicine.’”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="s04">
+    <div class="container">
+      <h2><span>What To Expect From</span> The Panama Rejuvenation Retreat</h2>
+      <p>Panama Rejuvenation Retreat for Healthcare Professionals aims to provide a space where physicians and healthcare specialists can rediscover their well-being and rejuvenate their approach to life and work.</p>
+      <p>We have created a sanctuary for relaxation and renewal to give you the space for essential personal care.</p>
+      <div class="">
+        <div class="icon-bull">
+          <span><img src="./icon-meditation.svg"></span>
+          <p><strong>Holistic Health Program:</strong> The program includes daily sessions of meditation, yoga, and workshops guided by experts in wellness and holistic health to promote relaxation, mental equilibrium, and physical vitality.</p>
+        </div>
+        <div class="icon-bull">
+          <span><img src="./icon-consult.svg"></span>
+          <p><strong>Personalized Guidance:</strong> Participants can access personalized consultations and individual sessions with medicine, nutrition, and fitness professionals to tailor wellness strategies to their individualized needs.</p>
+        </div>
+        <div class="icon-bull">
+          <span><img src="./icon-educate.svg"></span>
+          <p><strong>Educational Focus:</strong> Informative lectures on stress management, mindfulness techniques, healthy eating habits, and strategies for achieving work-life balance.</p>
+        </div>
+        <div class="icon-bull">
+          <span><img src="./icon-culture.svg"></span>
+          <p><strong>Cultural and Recreational Experiences:</strong> In addition to wellness-focused activities, cultural and recreational excursions will be organized for participants to explore Panama's natural beauty and cultural richness.</p>
+        </div>
+        <div class="icon-bull">
+          <span><img src="./icon-connection.svg"></span>
+          <p><strong>Networking and Connections:</strong> The retreat will allow you to interact with other high-level medical professionals, fostering meaningful connections and establishing professional networks extending beyond the event.</p>
+        </div>
+      </div>
+      <img src="./img-06-panama-culture.png" alt="Panama Culture" />
+    </div>
+  </section>
+
+  <section class="s05">
+    <div class="container">
+      <h2><span>Get Pampered In</span> The 5-Star JW Marriott Panama</h2>
+      <div class="flex-container">
+        <div class="flex-content">
+          <p>Nestled in the heart of Panama City, the JW Marriott Panama is a 5-star hotel that exudes elegance and sophistication. Boasting state-of-the-art facilities and impeccable service, this iconic hotel provides the perfect backdrop for a seamless blend of learning and networking.</p>
+          <p>Situated on the coast in Punta Pacifica in Panama City, Panama boasts a central location near the finest coffee shops, high-end shopping, and entertainment.</p>
+          <p><strong>Clinic Spa: Ocean Breeze Med Spa</strong> is a hidden gem in the tropical Caribbean. Their mission is to provide their clients with the ultimate experience of relaxation and excellence. You’ll enjoy innovative and luxurious treatments that truly help to rejuvenate and reinvigorate you.</p>
+        </div>
+        <img src="./img-07-jw-marriott.png" alt="JW Marriott Panama" />
+      </div>
+    </div>
+    <img src="./img-08-ocean-breeze.png" alt="Clinic Spa" class="img-full" />
+  </section>
+
+  <section class="s06">
+    <div class="container">
+      <h2><span>The Panama Rejuvenation Retreat</span> Itinerary</h2>
+      <div class="day">
+        <h3>Day 1: Arrival Day</h3>
+        <p>Upon arrival, all guests will receive a warm welcome package inclusive of some of Panama’s finest products. They will also receive an orientation regarding the hotel facilities and a comprehensive overview of the retreat program.</p>
+        <p>The evening will feature a delightful welcome dinner, encouraging participant interaction, introductions, and networking opportunities.</p>
+      </div>
+      <div class="day">
+        <h3>Day 2: Workshops, Treatments, and Tours</h3>
+        <ul>
+          <li><strong>7:00 - 7:45 am:</strong> Engage in a guided meditation and yoga session to kickstart the day with tranquility and centeredness.</li>
+          <li><strong>8:00 am:</strong> Breakfast with Dr. Latham, a distinguished figure renowned for holistic health insights.</li>
+          <li><strong>9:00 am - 1:30 pm:</strong> Participate in enriching workshops led by Dr. Latham covering various aspects of holistic wellness and health. Dr. Lathan’s legendary food will be served for lunch, providing an excellent opportunity for networking and learning.</li>
+          <li><strong>1:35 pm - 6:00 pm:</strong> Indulge in rejuvenating spa sessions, personalized consultations, and guided tours exploring the local area, providing relaxation and educational experiences. We will feed your body and feed your soul.</li>
+          <li><strong>7:00 pm - 8:30 pm:</strong> Dinner and Conference</li>
+        </ul>
+      </div>
+      <div class="day">
+        <h3>Day 3: Workshops, Treatments, and Tours</h3>
+        <ul>
+          <li><strong>7:00 - 7:45 am:</strong> Guided Meditation and Activities</li>
+          <li><strong>8:00 am:</strong> Breakfast with Dr. Latham.</li>
+          <li><strong>9:00 am - 1:30 pm:</strong> Engage in insightful workshops led by Dr. Latham followed by a nourishing lunch session.</li>
+          <li><strong>1:35 - 6:00 pm:</strong> Enjoy more replenishing spa sessions, personalized consultations, and guided tours for further relaxation and discovery.</li>
+          <li><strong>7:00 pm - 8:30 pm:</strong> Dinner and Conference.</li>
+        </ul>
+      </div>
+      <div class="day">
+        <h3>Day 4: Workshops, Treatments, and Tours</h3>
+        <ul>
+          <li><strong>7:00 - 7:45 am:</strong> Guided Meditation.</li>
+          <li><strong>8:00 am:</strong> Breakfast with a Special Guest.</li>
+          <li><strong>9:00 am - 1:30 pm:</strong> Participate in fitness-focused workshops led by expert instructors, concluding with a satisfying lunch.</li>
+          <li><strong>1:35 - 6:00 pm:</strong> Continue with spa sessions, personalized consultations, and tours.</li>
+          <li><strong>7:00 pm - 8:30 pm:</strong> Unwind at a lively dinner event with dancing, embracing the freedom of expression and celebration.</li>
+        </ul>
+      </div>
+      <div class="day">
+        <h3>Day 5: Departure, Additional Sessions Upon Request</h3>
+        <p>Participants will have the morning available for additional sessions or personal requests before departure, allowing for any desired extensions or last-minute engagements.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="s07">
+    <div class="container">
+      <h2><span>We Are Offering</span> 3 Panama Rejuvenation Retreats in 2024</h2>
+      <div class="flex-container schedule">
+        <span>April 15-19</span>
+        <span>July 01-05</span>
+        <span>October 07-11</span>
+      </div>
+      <p>Experience all of this (except flights to Panama) for the all-inclusive price of $12,000 USD.</p>
+      <p>The price includes accommodation, meals and beverages, local transportation, tours, and spa treatments.</p>
+      <div class="flex-container">
+        <img src="./img-09-pool-view.png" alt="JW Marriott Pool Sunset" />
+        <div class="flex-content">
+          <p>What will you gain after going through this program?</p>
+          <div class="bull bull-blk">
+            <p>A renewed perspective on life</p>
+            <p>More energy and vitality</p>
+            <p>New knowledge you can apply daily and practice</p>
+            <p>New friends and community</p>
+            <p>Feel happier and much more.</p>
+          </div>
+        </div>
+      </div>
+      <p>It's critical to invest in our well-being. Our most important form of wealth is our health. Nothing is more important than your health and well-being, and this is the perfect opportunity to take care of yourself.</p>
+      <p>As we’ve said many times, you can’t continue sacrificing your health, leading to “B-rated” care, thinking that you will show up and give your patients “A-level” care.</p>
+      <p>Your service makes you one of the most influential people in this world because you are responsible for caring for others. Your patients look up to you, and it’s essential to be a living example of what TRUE HEALTH means.</p>
+      <p>We invite you to share in this event to elevate your life, mental health, and energy and LIVE the ultimate wellness experience.
+        We look forward to hosting you in paradise!</p>
+    </div>
+  </section>
+
+  <section class="s08">
+    <div class="container">
+      <div class="flex-container">
+        <img src="./img-10-alex-cherisa.png" alt="Alex & Cherisa" />
+        <div class="flex-content">
+          <img src="./sig-alex-cherisa.svg" alt="Alex & Cherisa" />
+          <p>Dr. Alex and Dr. Cherisa Sandrow</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   </body>
 </html>
